@@ -23,10 +23,13 @@
                 console.log('error format', objError);
             }
 
-            if(parseObj == null)return false;
             let dataString = parseObj['type'];
+            if(typeof dataString == 'undefined')return null;
             let result = null;
             switch(dataString){
+                case 'boolean':
+                    result = (parseObj['d']==='true'?true:false);
+                break;
                 case 'number':
                     result = parseFloat(parseObj['d']);
                 break;
