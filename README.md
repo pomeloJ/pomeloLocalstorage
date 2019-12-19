@@ -14,7 +14,7 @@ for simplicity,just copy and coding
 
 we don't say anymore
 ```javascript
-<script src="https://cdn.ank.uno/github/pomeloJ/pomeloLocalStorage/plocalstorage.js"></script>
+<script src="https://cdn.ank.uno/github/pomeloJ/pomeloLocalstorage/plocalstorage.js"></script>
 ```
 
 ## Basic sample
