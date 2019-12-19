@@ -55,7 +55,8 @@ pstore.get('aObject');//return {'hello':'world'}
 //if data type is function,then return data with "string"  
 eval('let func = '+pstore.get('aFunction'));//it's work
 ```
-####Get All
+#### Get All
+
 If you want get all the data with pomeloLocalStorage
 ```javscript
 pstore.getAll();
