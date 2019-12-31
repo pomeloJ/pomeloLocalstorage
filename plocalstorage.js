@@ -8,8 +8,9 @@
         //set a item data
         'set':function(name,data){
             let dataType = typeof data;
-            let dataString = JSON.stringify(data);
+            let dataString = data;
             if (dataType == 'function')dataString = data.toString();//if is function then convert function to string
+            if (dataType == 'object')dataString = JSON.stringify(data);//if is object then JSON stringify
 
             let result = JSON.stringify({'type':dataType,'d':dataString});
             return localStorage.setItem(name,result);
@@ -17,12 +18,16 @@
         //get one item
         'get':function(name){
             let parseObj=null;
+            let getValue = localStorage.getItem(name);
+
+            if(getValue==null)return null;
+
             try {
-                parseObj = JSON.parse(localStorage.getItem(name));
+                parseObj = JSON.parse(getValue);
             }catch(objError){
                 console.log('error format', objError);
             }
-
+            
             let dataString = parseObj['type'];
             if(typeof dataString == 'undefined')return null;
             let result = null;
